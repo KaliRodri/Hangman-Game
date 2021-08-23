@@ -22,6 +22,11 @@ while True:
     
     
   elif choose == 2:
-    print("Vamos pontuar!")
+    print("*****PONTUAÇÃO*****")
   elif choose == 3:
-    print("Vamos sair!")
+    print("Tem certeza que quer sair?" "\n" "1 - sim 2 - Não")
+    sair = int(input())
+    if sair == 1:
+      break 
+  
+    
