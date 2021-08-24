@@ -1,56 +1,39 @@
-import os
 import random
-from typing import Counter
-palavras = ["Carro", "Moto", "Jogo", "Motor", "Subterraneo", "Araucarias", "Trator", "Otorrino", "Laringologista"]
-resposta = []
+import os
+def geraLista(palavra):
+ lista = []
+ for i in range(0,len(pergunta)):
+  lista.append(" * ")
+ return lista
+ 
+def insereLetra(letra, palavra, secreta):
+ for i in range(0,len(palavra)):
+  if palavra[i] == letra:
+   secreta[i] = letra
+ return secreta
+ 
+palavra = ["arara"]
+pergunta = random.choice(palavra)
 
 
-import os
-import random
-from typing import Counter
-palavras = ["Carro", "Moto", "Jogo", "Motor", "Subterraneo", "Araucarias", "Trator", "Otorrino", "Laringologista"]
-senha = []
+
 
 
 while True:
-  print("*****BEM VINDO*****")
-  print("O que vai ser?""\n""1 - Nova Partida""\n""2 - Ver Pontuação""\n""3 - Sair")
-  
-  choose = int(input())
-  if choose == 1:
+ print("*****BEM VINDO*****""\n")
+ print("O que vai ser?""\n""1 - Nova Partida""\n""2 - Ver Pontuação""\n""3 - Sair")   
+ choose = int(input())
+ if choose == 1:
     print("Vamos começar!")
     os.system('cls')
-    
-    pergunta = random.choice(palavras)
-    resposta = list (pergunta)
-    cod = "_" * len(resposta)
-    
-    print(str(cod))
-    
-    senha.append (list(cod))
-    
-    print (senha)
-    
-    ("\n""Qual é a letra?")
-    
-    letra = input()
-    
-    if letra in resposta:
-     senha.append(letra)
-     print(senha)
-    else:
-     print("No, " + str(letra) +  " is not in list")
-    
-    
-    
-    
-    
-  elif choose == 2:
-    print("*****PONTUAÇÃO*****")
-  elif choose == 3:
-    print("Tem certeza que quer sair?" "\n" "1 - sim 2 - Não")
-    sair = int(input())
-    if sair == 1:
-      break 
+    secreta = geraLista(palavra)
+    print("\nPalavra secreta: ")
+    print(secreta) 
+    letra = input("Letra: ")
+    if letra <= "a" and letra >= "Z":
+     secreta = insereLetra(letra, palavra, secreta)
+     print("\nPalavra secreta: ")
+     print(secreta)
+ 
   
     
